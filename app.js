@@ -1,3 +1,6 @@
+const crypto = require("crypto")
 
-crypto.randomUUID()
+const userID = crypto.randomUUID()
+
+console.log(userID)
 
