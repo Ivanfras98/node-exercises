@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import figlet from "figlet";
 
 const server = createServer((request, response) => {
   console.log("request received");
@@ -7,9 +8,24 @@ const server = createServer((request, response) => {
 
   response.setHeader("Content-Type", "application/json");
 
-  const jsonResponseBody = JSON.stringify({ location: "Mars" });
-
-  response.end(jsonResponseBody);
+  figlet.text(
+    "Boo!",
+    {
+      font: "Ghost",
+      horizontalLayout: "default",
+      verticalLayout: "default",
+      width: 80,
+      whitespaceBreak: true,
+    },
+    (err, data) => {
+      if (err) {
+        console.log("Something went wrong...");
+        console.dir(err);
+        return;
+      }
+      response.end(data);
+    }
+  );
 });
 
 server.listen(3000, () => {
