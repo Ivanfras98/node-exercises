@@ -17,4 +17,4 @@ fs.writeFile(
   }
 );
 
-// // contr.abort(); Se viene chiamato il metodo abort() ci il file rimane vuoto e ci viene dato l'errore abort
+// // contr.abort(); Se viene chiamato il metodo abort() la scrittura viene interrotta e ci viene dato l'errore abort
